@@ -1,0 +1,12 @@
+{
+	"name": "ogreader",
+	"description": "Read Open Graph metadata from HTML via server.",
+	"version": "0.4.0",
+	"main": "ogreader.js",
+	"dependencies" : {
+		"request": "*",
+		"daveutils": "*",
+		"cheerio": "1.0.0-rc.10",
+		"davehttp": "*"
+		}
+	}
