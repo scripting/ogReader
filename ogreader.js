@@ -83,7 +83,12 @@ function handleHttpRequest (theRequest, options = new Object ()) { //returns tru
 		case "get":
 			switch (theRequest.lowerpath) {
 				case "/":
-					getMetadataFromHtml (params.url, httpReturn);
+					if (params.url === undefined) { //8/9/25 by DW
+						returnNotFound ();
+						}
+					else {
+						getMetadataFromHtml (params.url, httpReturn);
+						}
 					return (true);
 				case "/now":
 					returnPlaintext (new Date ().toUTCString ());
