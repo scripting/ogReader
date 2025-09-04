@@ -1,4 +1,4 @@
-const myProductName = "ogReader", myVersion = "0.4.0"; 
+const myProductName = "ogReader", myVersion = "0.4.1"; 
 
 const fs = require ("fs");
 const request = require ("request"); 
@@ -67,12 +67,7 @@ function handleHttpRequest (theRequest, options = new Object ()) { //returns tru
 		}
 	function httpReturn (err, data) {
 		if (err) {
-			if (err.code !== undefined) { //2/22/25 by DW -- let the caller determine the code
-				theRequest.httpReturn (err.code, "text/plain", err.message);
-				}
-			else {
-				returnError (err);
-				}
+			returnError (err); //9/4/25; 9:04:48 AM by DW -- don't try to send the code
 			}
 		else {
 			returnData (data);
